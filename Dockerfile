@@ -27,6 +27,7 @@ RUN chmod +x /usr/bin/protoc-gen-grpc-web
 RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.10.0
 RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.10.0
 
+# googleapi proto
 ADD https://github.com/googleapis/googleapis/archive/refs/heads/master.zip /tmp/master.zip
 RUN unzip /tmp/master.zip -d /tmp
 RUN mv /tmp/googleapis-master/google/* /usr/local/include/google/
