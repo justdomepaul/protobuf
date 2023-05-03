@@ -9,15 +9,14 @@ GRPC_SRC = $(notdir ${wildcard *.proto})
 GPRC_DIST_GO = ./dist/go
 GPRC_DIST_WEB = ./dist/web
 GPRC_DIST_SWAGGER = ./third_party/OpenAPI
-GRPC_DOCKER = docker run --rm -u 1000 -v $(HOST):/hello -w /hello justdomepaul/protobuf:vanilla-v3.19.4 $(1)
+GRPC_DOCKER = docker run --rm -u 1000 -v $(HOST):/hello -w /hello justdomepaul/protobuf:vanilla-v22.3 $(1)
 
 clean: clean-grpc ## clean all generated files
 
 clean-grpc: ## clean GRPC generated files
 	@rm -rf grpc/$(GPRC_DIST_GO)
-	@rm -rf grpc/$(GPRC_DIST_WEB)
 
-build: build-grpc-go build-grpc-web ## build all
+build: build-grpc-go## build all
 
 build-grpc-go: ## build gRPC GO
 	$(info build gRPC GO)
@@ -29,21 +28,6 @@ build-grpc-go: ## build gRPC GO
 	$(eval OUT_SWAGGER := --openapiv2_opt=logtostderr=true --openapiv2_opt=openapi_configuration=./hello.swagger.yaml  --openapiv2_out=$(GPRC_DIST_SWAGGER))
 	$(eval CMD := protoc $(INCLUDE) $(OUT_GO) $(OUT_GO_GRPC) $(OUT_GATEWAY_GO) $(OUT_SWAGGER) $(GRPC_SRC))
 	@$(call GRPC_DOCKER, $(CMD))
-
-build-grpc-web: ## build gRPC Web
-	$(info build gRPC Web)
-	@mkdir -p ./$(GPRC_DIST_WEB)
-	$(eval INCLUDE := -I/usr/local/include -I=. -I=/go/src -I=/go/pkg/mod/github.com/grpc-ecosystem/grpc-gateway/v2@v2.10.0/)
-	$(eval PLUGIN := --plugin=protoc-gen-ts=/workspace/node_modules/.bin/protoc-gen-ts)
-	$(eval OUT_JS := --js_out=import_style=commonjs,binary:$(GPRC_DIST_WEB))
-	$(eval OUT_TS := --ts_out=service=grpc-web:$(GPRC_DIST_WEB))
-	$(eval rm_annotation_ts := sed -i -e '/import \* as google_api_annotations_pb from ".\/google\/api\/annotations_pb";/d' ./dist/web/hello_pb.d.ts)
-	$(eval rm_annotation_js1 := sed -i -e '/var google_api_annotations_pb/d' ./dist/web/hello_pb.js)
-	$(eval rm_annotation_js2 := sed -i -e '/proto, google_api_annotations_pb/d' ./dist/web/hello_pb.js)
-	$(eval rm_annotaion := $(rm_annotation_ts) && $(rm_annotation_js1) && $(rm_annotation_js2))
-	$(eval CMD := protoc $(INCLUDE) $(PLUGIN) $(OUT_JS) $(OUT_TS) $(GRPC_SRC) && $(rm_annotaion))
-	@$(call GRPC_DOCKER, $(CMD))
-
 
 run-gateway-api-doc-server: ## run gateway api server
 	go run ./
