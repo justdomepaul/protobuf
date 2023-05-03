@@ -1,8 +1,8 @@
 FROM golang:1.20.4-buster
 LABEL maintainer="max.focker.shih@gmail.com"
 
-ARG PROTOC_VERSION=3.19.4
-ARG GRPC_WEB_VERSION=1.3.1
+ARG PROTOC_VERSION=22.3
+ARG GRPC_WEB_VERSION=1.4.2
 
 ENV GO111MODULE on
 
@@ -34,8 +34,5 @@ RUN rm -rf /tmp/master.zip
 RUN rm -rf /tmp/googleapis-master
 
 WORKDIR /workspace
-
-# ts-protoc-gen
-RUN npm install ts-protoc-gen
 
 CMD ["/bin/bash", "-l"]
