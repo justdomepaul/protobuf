@@ -1,4 +1,4 @@
-FROM golang:1.18.0-buster
+FROM golang:1.20.4-buster
 LABEL maintainer="max.focker.shih@gmail.com"
 
 ARG PROTOC_VERSION=3.19.4

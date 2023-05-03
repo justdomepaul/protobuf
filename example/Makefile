@@ -7,7 +7,6 @@ help: ## This help.
 HOST = $(abspath .)
 GRPC_SRC = $(notdir ${wildcard *.proto})
 GPRC_DIST_GO = ./dist/go
-GPRC_DIST_TS = ./dist/ts
 GPRC_DIST_WEB = ./dist/web
 GPRC_DIST_SWAGGER = ./third_party/OpenAPI
 GRPC_DOCKER = docker run --rm -u 1000 -v $(HOST):/hello -w /hello justdomepaul/protobuf:vanilla-v3.19.4 $(1)
@@ -45,9 +44,6 @@ build-grpc-web: ## build gRPC Web
 	$(eval CMD := protoc $(INCLUDE) $(PLUGIN) $(OUT_JS) $(OUT_TS) $(GRPC_SRC) && $(rm_annotaion))
 	@$(call GRPC_DOCKER, $(CMD))
 
-build-bindata: ## build bindata static file
-	@go get -u github.com/jteeuwen/go-bindata/...
-	go-bindata third_party/OpenAPI/
 
 run-gateway-api-doc-server: ## run gateway api server
 	go run ./
