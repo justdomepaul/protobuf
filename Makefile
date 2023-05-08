@@ -10,6 +10,6 @@ grpc-go-build-push: ## build grpc golang protoc image & push
 	docker build -t justdomepaul/protobuf$(TAG) .
 	docker push justdomepaul/protobuf$(TAG)
 
-grpc-dart-build-push: ## build grpc golang protoc image & push
+grpc-dart-build-push: ## build grpc dart protoc image & push
 	docker build -f ./language/Dockerfile.dart -t justdomepaul/protobuf-dart$(TAG) .
 	docker push justdomepaul/protobuf-dart$(TAG)

@@ -101,10 +101,6 @@
         "name": {
           "type": "string"
         },
-        "age": {
-          "type": "integer",
-          "format": "int32"
-        },
         "createdTime": {
           "type": "string",
           "format": "date-time"

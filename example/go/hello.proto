@@ -3,6 +3,7 @@ syntax = "proto3";
 package example;
 
 option go_package = ".;example";
+import "google/api/visibility.proto";
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -36,7 +37,7 @@ service HelloService {
 
 message HelloRequest {
   string name = 1;
-  int32 age = 2;
+  int32 age = 2 [(google.api.field_visibility).restriction = "PREVIEW"];
   google.protobuf.Timestamp created_time = 3;
 }
 message HelloReply {

@@ -13,13 +13,13 @@ const HelloRequest$json = const {
   '1': 'HelloRequest',
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'age', '3': 2, '4': 1, '5': 5, '10': 'age'},
+    const {'1': 'age', '3': 2, '4': 1, '5': 5, '8': const {}, '10': 'age'},
     const {'1': 'created_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdTime'},
   ],
 };
 
 /// Descriptor for `HelloRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List helloRequestDescriptor = $convert.base64Decode('CgxIZWxsb1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgNhZ2UYAiABKAVSA2FnZRI9CgxjcmVhdGVkX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtjcmVhdGVkVGltZQ==');
+final $typed_data.Uint8List helloRequestDescriptor = $convert.base64Decode('CgxIZWxsb1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIhCgNhZ2UYAiABKAVCD/rS5JMCCRIHUFJFVklFV1IDYWdlEj0KDGNyZWF0ZWRfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NyZWF0ZWRUaW1l');
 @$core.Deprecated('Use helloReplyDescriptor instead')
 const HelloReply$json = const {
   '1': 'HelloReply',

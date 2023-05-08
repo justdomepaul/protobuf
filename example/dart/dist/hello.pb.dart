@@ -9,13 +9,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $1;
+import 'google/protobuf/timestamp.pb.dart' as $2;
 
 class HelloRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HelloRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'example'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'age', $pb.PbFieldType.O3)
-    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$2.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdTime', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -23,7 +23,7 @@ class HelloRequest extends $pb.GeneratedMessage {
   factory HelloRequest({
     $core.String? name,
     $core.int? age,
-    $1.Timestamp? createdTime,
+    $2.Timestamp? createdTime,
   }) {
     final _result = create();
     if (name != null) {
@@ -77,15 +77,15 @@ class HelloRequest extends $pb.GeneratedMessage {
   void clearAge() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.Timestamp get createdTime => $_getN(2);
+  $2.Timestamp get createdTime => $_getN(2);
   @$pb.TagNumber(3)
-  set createdTime($1.Timestamp v) { setField(3, v); }
+  set createdTime($2.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedTime() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Timestamp ensureCreatedTime() => $_ensure(2);
+  $2.Timestamp ensureCreatedTime() => $_ensure(2);
 }
 
 class HelloReply extends $pb.GeneratedMessage {
