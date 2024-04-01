@@ -1,8 +1,9 @@
-FROM golang:1.20.4-buster
+FROM golang:1.22.1-bullseye
 LABEL maintainer="max.focker.shih@gmail.com"
 
-ARG PROTOC_VERSION=22.3
-ARG GRPC_WEB_VERSION=1.4.2
+ARG PROTOC_VERSION=26.1
+ARG GRPC_WEB_VERSION=1.5.0
+ARG GRPC_GATEWAY=2.19.1
 
 ENV GO111MODULE on
 
@@ -24,8 +25,8 @@ ADD https://github.com/grpc/grpc-web/releases/download/${GRPC_WEB_VERSION}/proto
 RUN chmod +x /usr/bin/protoc-gen-grpc-web
 
 # grpc-gateway
-RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.10.0
-RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.10.0
+RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v${GRPC_GATEWAY}
+RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v${GRPC_GATEWAY}
 
 # googleapi proto
 ADD https://github.com/googleapis/googleapis/archive/refs/heads/master.zip /tmp/master.zip
