@@ -4,6 +4,8 @@ package example;
 
 option go_package = ".;example";
 import "google/protobuf/timestamp.proto";
+import "google/type/decimal.proto";
+
 
 service HelloService {
   rpc SayHello (HelloRequest) returns (HelloReply){}
@@ -32,6 +34,7 @@ message HelloRequest {
   string name = 1;
   int32 age = 2;
   google.protobuf.Timestamp created_time = 3;
+  google.type.Decimal amount = 4;
 }
 message HelloReply {
   string message = 1;

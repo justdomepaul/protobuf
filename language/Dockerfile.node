@@ -1,0 +1,21 @@
+FROM node:22.2.0-bullseye-slim
+LABEL maintainer="max.focker.shih@gmail.com"
+
+ARG PROTOC_VERSION=26.1
+ARG GRPC_WEB_VERSION=1.5.0
+ARG GRPC_GATEWAY=2.19.1
+
+ENV GO111MODULE on
+
+# protoc
+RUN apt update -qqy && apt install -qy --no-install-recommends unzip npm \
+  && rm -rf /var/lib/apt/lists/*
+ADD https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip /usr/local/protoc.zip
+RUN unzip /usr/local/protoc.zip -d /usr/local/
+RUN rm /usr/local/protoc.zip
+
+RUN npm install -g grpc-tools grpc_tools_node_protoc_ts protoc-gen-js protoc-gen-grpc protoc-gen-ts google-protobuf @types/google-protobuf google-proto-files
+
+WORKDIR /workspace
+
+CMD ["/bin/bash", "-l"]
