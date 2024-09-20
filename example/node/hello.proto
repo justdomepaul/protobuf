@@ -5,6 +5,7 @@ package example;
 option go_package = ".;example";
 import "google/protobuf/timestamp.proto";
 import "google/type/decimal.proto";
+import "google/rpc/error_details.proto";
 
 
 service HelloService {

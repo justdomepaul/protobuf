@@ -8,7 +8,7 @@ HOST = $(abspath .)
 GRPC_SRC = $(notdir ${wildcard *.proto})
 GPRC_DIST_NODE = ./dist
 GRPC_DOCKER = docker run --rm -u 1000 -v $(HOST):/generate -w /generate justdomepaul/protobuf-node:vanilla-v26.1 $(1)
-GRPC_GOOGLE_PROTOBUF_PLUGIN = google/protobuf/timestamp.proto google/type/decimal.proto
+GRPC_GOOGLE_PROTOBUF_PLUGIN = google/protobuf/timestamp.proto google/type/decimal.proto google/rpc/error_details.proto
 
 clean: clean-grpc ## clean all generated files
 

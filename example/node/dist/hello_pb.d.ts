@@ -7,6 +7,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_type_decimal_pb from "./google/type/decimal_pb";
+import * as google_rpc_error_details_pb from "./google/rpc/error_details_pb";
 
 export class HelloRequest extends jspb.Message { 
     getName(): string;

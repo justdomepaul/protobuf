@@ -25,6 +25,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var google_type_decimal_pb = require('./google/type/decimal_pb.js');
 goog.object.extend(proto, google_type_decimal_pb);
+var google_rpc_error_details_pb = require('./google/rpc/error_details_pb.js');
+goog.object.extend(proto, google_rpc_error_details_pb);
 goog.exportSymbol('proto.example.Feature', null, global);
 goog.exportSymbol('proto.example.HelloReply', null, global);
 goog.exportSymbol('proto.example.HelloRequest', null, global);

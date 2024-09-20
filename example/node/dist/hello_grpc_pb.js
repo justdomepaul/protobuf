@@ -5,6 +5,7 @@ var grpc = require('@grpc/grpc-js');
 var hello_pb = require('./hello_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var google_type_decimal_pb = require('./google/type/decimal_pb.js');
+var google_rpc_error_details_pb = require('./google/rpc/error_details_pb.js');
 
 function serialize_example_Feature(arg) {
   if (!(arg instanceof hello_pb.Feature)) {
