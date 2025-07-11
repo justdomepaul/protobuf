@@ -1,9 +1,9 @@
-FROM golang:1.22.1-bullseye
+FROM golang:1.24.5-bullseye
 LABEL maintainer="max.focker.shih@gmail.com"
 
-ARG PROTOC_VERSION=26.1
+ARG PROTOC_VERSION=31.1
 ARG GRPC_WEB_VERSION=1.5.0
-ARG GRPC_GATEWAY=2.19.1
+ARG GRPC_GATEWAY=2.27.1
 
 ENV GO111MODULE on
 
