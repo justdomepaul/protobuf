@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2020"
+    ],
+    "module": "es2020",
+    "target": "es2020",
+    "moduleResolution": "bundler",
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    // === 輸出配置 ===
+    "outDir": ".",
+//    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "maxNodeModuleJsDepth": 1,
+    "allowImportingTsExtensions": false,
+//    "noEmit": true,
+    // === 現代 ESM 設定 ===
+    "verbatimModuleSyntax": false,        // 不保持原樣的模塊語法
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    // === 解析設定 ===
+    "baseUrl": ".",
+    // === 嚴格模式 ===
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitOverride": true,
+    // === 額外檢查 ===
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // === 性能優化 ===
+    "skipLibCheck": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    // === 其他有用選項 ===
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "preserveWatchOutput": true,
+    "pretty": true
+  },
+  "exclude": [
+    "node_modules",                      // node 模塊
+    "dist",                              // 輸出目錄
+    "**/*.test.ts",                      // 測試文件
+    "**/*.spec.ts",                      // 規格文件
+    "coverage",                          // 覆蓋率報告
+    "docs",                              // 文檔
+    "scripts",                           // 腳本文件
+    "**/*.config.js",                    // 配置文件
+    "**/*.config.ts"                     // 配置文件
+  ],
+  // === TypeScript 編譯器選項擴展 ===
+  "ts-node": {
+    "esm": true,                         // ts-node ESM 支援
+    "experimentalSpecifierResolution": "node"
+  }
+}

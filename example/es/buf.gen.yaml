@@ -1,0 +1,63 @@
+version: v2
+managed:
+  enabled: true
+  disable:
+    - file_option: go_package
+      module: buf.build/googleapis/googleapis
+inputs:
+  - directory: .
+  - module: buf.build/googleapis/googleapis
+    paths:
+      - google/type/decimal.proto
+      - google/rpc/error_details.proto
+      - google/protobuf/timestamp.proto
+plugins:
+  - remote: buf.build/grpc/go:v1.5.1
+    out: go/gen
+    opt:
+      - paths=source_relative
+  - remote: buf.build/connectrpc/go:v1.18.1
+    out: go/gen
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc-ecosystem/gateway:v2.27.1
+    out: go/gen
+    opt:
+      - paths=source_relative
+  - remote: buf.build/grpc-ecosystem/openapiv2:v2.27.1
+    out: go/doc/api
+    opt:
+      - output_format=yaml
+#      - standalone=true
+#      - grpc_api_configuration=./hello.swagger.yaml
+  - remote: buf.build/protocolbuffers/go:v1.36.6
+    out: go/gen
+    opt:
+      - paths=source_relative
+  - remote: buf.build/community/timostamm-protobuf-ts:v2.11.1
+    out: gen
+    opt:
+#      - generate_dependencies
+      - output_javascript_es2020
+      - long_type_number
+      - add_pb_suffix
+      - client_generic
+#      - client_grpc1
+#      - server_generic
+      - server_none
+  # 產生 Protobuf 訊息的 TypeScript 類別 (e.g., HelloRequest)
+  # 外掛程式 1: 產生 Protobuf 訊息和枚舉類型
+  # 這個外掛程式來自 @bufbuild/protoc-gen-es 套件
+  - remote: buf.build/bufbuild/es:v2.6.0
+    out: grpc-client/gen
+    include_imports: true
+    opt:
+      # 關鍵選項 1: 產生 TypeScript (.ts) 檔案，而非 JavaScript。
+      # 這為我們帶來了端到端的類型安全。
+      - target=js+dts
+      # 關鍵選項 2: 在產生的 import 語句中加上 '.js' 副檔名。
+      # 這是為了符合 Node.js 原生 ESM 的解析規則，
+      # 例如：import { User } from './user_pb.js'。
+      - import_extension=.js
+      - js_import_style=module
+      - json_types=true

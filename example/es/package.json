@@ -1,0 +1,29 @@
+{
+  "name": "es",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "npx buf generate",
+    "update": "npx buf dep update"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@bufbuild/buf": "^1.55.1",
+    "@bufbuild/protoc-gen-es": "^2.6.0",
+    "@connectrpc/protoc-gen-connect-es": "^1.6.1",
+    "@types/node": "^24.0.13",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.6.0",
+    "@connectrpc/connect": "^2.0.2",
+    "@connectrpc/connect-node": "^2.0.2",
+    "@protobuf-ts/runtime": "^2.11.1",
+    "@protobuf-ts/runtime-rpc": "^2.11.1"
+  }
+}
