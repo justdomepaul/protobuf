@@ -2,7 +2,7 @@
 // @generated from file hello.proto (package example, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp, TimestampJson } from "@bufbuild/protobuf/wkt";
 import type { Decimal, DecimalJson } from "./google/type/decimal_pb.js";
@@ -11,6 +11,888 @@ import type { Decimal, DecimalJson } from "./google/type/decimal_pb.js";
  * Describes the file hello.proto.
  */
 export declare const file_hello: GenFile;
+
+/**
+ * @generated from message example.MessageOrderStatus
+ */
+export declare type MessageOrderStatus = Message<"example.MessageOrderStatus"> & {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string order_no = 3;
+   */
+  orderNo: string;
+
+  /**
+   * @generated from field: string order_url = 4;
+   */
+  orderUrl: string;
+
+  /**
+   * @generated from field: string order_status = 5;
+   */
+  orderStatus: string;
+};
+
+/**
+ * @generated from message example.MessageOrderStatus
+ */
+export declare type MessageOrderStatusJson = {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string order_no = 3;
+   */
+  orderNo?: string;
+
+  /**
+   * @generated from field: string order_url = 4;
+   */
+  orderUrl?: string;
+
+  /**
+   * @generated from field: string order_status = 5;
+   */
+  orderStatus?: string;
+};
+
+/**
+ * Describes the message example.MessageOrderStatus.
+ * Use `create(MessageOrderStatusSchema)` to create a new message.
+ */
+export declare const MessageOrderStatusSchema: GenMessage<MessageOrderStatus, {jsonType: MessageOrderStatusJson}>;
+
+/**
+ * @generated from message example.MessageOrderQA
+ */
+export declare type MessageOrderQA = Message<"example.MessageOrderQA"> & {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string order_no = 3;
+   */
+  orderNo: string;
+
+  /**
+   * @generated from field: string order_url = 4;
+   */
+  orderUrl: string;
+
+  /**
+   * @generated from field: string reply = 5;
+   */
+  reply: string;
+};
+
+/**
+ * @generated from message example.MessageOrderQA
+ */
+export declare type MessageOrderQAJson = {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string order_no = 3;
+   */
+  orderNo?: string;
+
+  /**
+   * @generated from field: string order_url = 4;
+   */
+  orderUrl?: string;
+
+  /**
+   * @generated from field: string reply = 5;
+   */
+  reply?: string;
+};
+
+/**
+ * Describes the message example.MessageOrderQA.
+ * Use `create(MessageOrderQASchema)` to create a new message.
+ */
+export declare const MessageOrderQASchema: GenMessage<MessageOrderQA, {jsonType: MessageOrderQAJson}>;
+
+/**
+ * @generated from message example.MessageProductQA
+ */
+export declare type MessageProductQA = Message<"example.MessageProductQA"> & {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string product_url = 3;
+   */
+  productUrl: string;
+
+  /**
+   * @generated from field: string reply_txt = 4;
+   */
+  replyTxt: string;
+
+  /**
+   * @generated from field: string recipient_email = 5;
+   */
+  recipientEmail: string;
+};
+
+/**
+ * @generated from message example.MessageProductQA
+ */
+export declare type MessageProductQAJson = {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string product_url = 3;
+   */
+  productUrl?: string;
+
+  /**
+   * @generated from field: string reply_txt = 4;
+   */
+  replyTxt?: string;
+
+  /**
+   * @generated from field: string recipient_email = 5;
+   */
+  recipientEmail?: string;
+};
+
+/**
+ * Describes the message example.MessageProductQA.
+ * Use `create(MessageProductQASchema)` to create a new message.
+ */
+export declare const MessageProductQASchema: GenMessage<MessageProductQA, {jsonType: MessageProductQAJson}>;
+
+/**
+ * @generated from message example.MessageStockNotification
+ */
+export declare type MessageStockNotification = Message<"example.MessageStockNotification"> & {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string product_name = 3;
+   */
+  productName: string;
+
+  /**
+   * @generated from field: string product_id = 4;
+   */
+  productId: string;
+};
+
+/**
+ * @generated from message example.MessageStockNotification
+ */
+export declare type MessageStockNotificationJson = {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string store_url = 2;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string product_name = 3;
+   */
+  productName?: string;
+
+  /**
+   * @generated from field: string product_id = 4;
+   */
+  productId?: string;
+};
+
+/**
+ * Describes the message example.MessageStockNotification.
+ * Use `create(MessageStockNotificationSchema)` to create a new message.
+ */
+export declare const MessageStockNotificationSchema: GenMessage<MessageStockNotification, {jsonType: MessageStockNotificationJson}>;
+
+/**
+ * @generated from message example.MessageCartReminderCartItem
+ */
+export declare type MessageCartReminderCartItem = Message<"example.MessageCartReminderCartItem"> & {
+  /**
+   * @generated from field: string img_src = 1;
+   */
+  imgSrc: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+};
+
+/**
+ * @generated from message example.MessageCartReminderCartItem
+ */
+export declare type MessageCartReminderCartItemJson = {
+  /**
+   * @generated from field: string img_src = 1;
+   */
+  imgSrc?: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name?: string;
+};
+
+/**
+ * Describes the message example.MessageCartReminderCartItem.
+ * Use `create(MessageCartReminderCartItemSchema)` to create a new message.
+ */
+export declare const MessageCartReminderCartItemSchema: GenMessage<MessageCartReminderCartItem, {jsonType: MessageCartReminderCartItemJson}>;
+
+/**
+ * @generated from message example.MessageCartReminder
+ */
+export declare type MessageCartReminder = Message<"example.MessageCartReminder"> & {
+  /**
+   * @generated from field: string store_logo = 1;
+   */
+  storeLogo: string;
+
+  /**
+   * @generated from field: string member_name = 2;
+   */
+  memberName: string;
+
+  /**
+   * @generated from field: repeated example.MessageCartReminderCartItem cart_items = 3;
+   */
+  cartItems: MessageCartReminderCartItem[];
+
+  /**
+   * @generated from field: string store_url = 4;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string recipient_email = 5;
+   */
+  recipientEmail: string;
+
+  /**
+   * @generated from field: string cancel_url = 6;
+   */
+  cancelUrl: string;
+};
+
+/**
+ * @generated from message example.MessageCartReminder
+ */
+export declare type MessageCartReminderJson = {
+  /**
+   * @generated from field: string store_logo = 1;
+   */
+  storeLogo?: string;
+
+  /**
+   * @generated from field: string member_name = 2;
+   */
+  memberName?: string;
+
+  /**
+   * @generated from field: repeated example.MessageCartReminderCartItem cart_items = 3;
+   */
+  cartItems?: MessageCartReminderCartItemJson[];
+
+  /**
+   * @generated from field: string store_url = 4;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string recipient_email = 5;
+   */
+  recipientEmail?: string;
+
+  /**
+   * @generated from field: string cancel_url = 6;
+   */
+  cancelUrl?: string;
+};
+
+/**
+ * Describes the message example.MessageCartReminder.
+ * Use `create(MessageCartReminderSchema)` to create a new message.
+ */
+export declare const MessageCartReminderSchema: GenMessage<MessageCartReminder, {jsonType: MessageCartReminderJson}>;
+
+/**
+ * @generated from message example.MessageRewardPointReminder
+ */
+export declare type MessageRewardPointReminder = Message<"example.MessageRewardPointReminder"> & {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string currency = 2;
+   */
+  currency: string;
+
+  /**
+   * @generated from field: string points = 3;
+   */
+  points: string;
+
+  /**
+   * @generated from field: string timezone = 4;
+   */
+  timezone: string;
+
+  /**
+   * @generated from field: string end_time = 5;
+   */
+  endTime: string;
+
+  /**
+   * @generated from field: string activity_name = 6;
+   */
+  activityName: string;
+
+  /**
+   * @generated from field: string store_url = 7;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string recipient_email = 8;
+   */
+  recipientEmail: string;
+
+  /**
+   * @generated from field: string cancel_url = 9;
+   */
+  cancelUrl: string;
+};
+
+/**
+ * @generated from message example.MessageRewardPointReminder
+ */
+export declare type MessageRewardPointReminderJson = {
+  /**
+   * @generated from field: string store_name = 1;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string currency = 2;
+   */
+  currency?: string;
+
+  /**
+   * @generated from field: string points = 3;
+   */
+  points?: string;
+
+  /**
+   * @generated from field: string timezone = 4;
+   */
+  timezone?: string;
+
+  /**
+   * @generated from field: string end_time = 5;
+   */
+  endTime?: string;
+
+  /**
+   * @generated from field: string activity_name = 6;
+   */
+  activityName?: string;
+
+  /**
+   * @generated from field: string store_url = 7;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string recipient_email = 8;
+   */
+  recipientEmail?: string;
+
+  /**
+   * @generated from field: string cancel_url = 9;
+   */
+  cancelUrl?: string;
+};
+
+/**
+ * Describes the message example.MessageRewardPointReminder.
+ * Use `create(MessageRewardPointReminderSchema)` to create a new message.
+ */
+export declare const MessageRewardPointReminderSchema: GenMessage<MessageRewardPointReminder, {jsonType: MessageRewardPointReminderJson}>;
+
+/**
+ * @generated from message example.MessageGroupBuyProductItem
+ */
+export declare type MessageGroupBuyProductItem = Message<"example.MessageGroupBuyProductItem"> & {
+  /**
+   * @generated from field: string img_src = 1;
+   */
+  imgSrc: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string variant = 3;
+   */
+  variant: string;
+
+  /**
+   * @generated from field: int64 num = 4;
+   */
+  num: bigint;
+
+  /**
+   * @generated from field: string price = 5;
+   */
+  price: string;
+
+  /**
+   * @generated from field: string total_price = 6;
+   */
+  totalPrice: string;
+};
+
+/**
+ * @generated from message example.MessageGroupBuyProductItem
+ */
+export declare type MessageGroupBuyProductItemJson = {
+  /**
+   * @generated from field: string img_src = 1;
+   */
+  imgSrc?: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: string variant = 3;
+   */
+  variant?: string;
+
+  /**
+   * @generated from field: int64 num = 4;
+   */
+  num?: string;
+
+  /**
+   * @generated from field: string price = 5;
+   */
+  price?: string;
+
+  /**
+   * @generated from field: string total_price = 6;
+   */
+  totalPrice?: string;
+};
+
+/**
+ * Describes the message example.MessageGroupBuyProductItem.
+ * Use `create(MessageGroupBuyProductItemSchema)` to create a new message.
+ */
+export declare const MessageGroupBuyProductItemSchema: GenMessage<MessageGroupBuyProductItem, {jsonType: MessageGroupBuyProductItemJson}>;
+
+/**
+ * @generated from message example.MessageGroupBuy
+ */
+export declare type MessageGroupBuy = Message<"example.MessageGroupBuy"> & {
+  /**
+   * @generated from field: string store_logo = 1;
+   */
+  storeLogo: string;
+
+  /**
+   * @generated from field: repeated example.MessageGroupBuyProductItem product_items = 2;
+   */
+  productItems: MessageGroupBuyProductItem[];
+
+  /**
+   * @generated from field: string store_name = 3;
+   */
+  storeName: string;
+
+  /**
+   * @generated from field: string store_url = 4;
+   */
+  storeUrl: string;
+
+  /**
+   * @generated from field: string product_id = 5;
+   */
+  productId: string;
+
+  /**
+   * @generated from field: string group_buy_id = 6;
+   */
+  groupBuyId: string;
+
+  /**
+   * @generated from field: string group_buy_title = 7;
+   */
+  groupBuyTitle: string;
+
+  /**
+   * @generated from field: string final_price = 8;
+   */
+  finalPrice: string;
+
+  /**
+   * @generated from field: string id = 9;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string order_no = 10;
+   */
+  orderNo: string;
+
+  /**
+   * @generated from field: string product_total = 11;
+   */
+  productTotal: string;
+
+  /**
+   * @generated from field: string discount = 12;
+   */
+  discount: string;
+
+  /**
+   * @generated from field: string shipment_fee = 13;
+   */
+  shipmentFee: string;
+
+  /**
+   * @generated from field: string paying_fee = 14;
+   */
+  payingFee: string;
+
+  /**
+   * @generated from field: string order_price = 15;
+   */
+  orderPrice: string;
+
+  /**
+   * @generated from field: bool is_payment = 16;
+   */
+  isPayment: boolean;
+};
+
+/**
+ * @generated from message example.MessageGroupBuy
+ */
+export declare type MessageGroupBuyJson = {
+  /**
+   * @generated from field: string store_logo = 1;
+   */
+  storeLogo?: string;
+
+  /**
+   * @generated from field: repeated example.MessageGroupBuyProductItem product_items = 2;
+   */
+  productItems?: MessageGroupBuyProductItemJson[];
+
+  /**
+   * @generated from field: string store_name = 3;
+   */
+  storeName?: string;
+
+  /**
+   * @generated from field: string store_url = 4;
+   */
+  storeUrl?: string;
+
+  /**
+   * @generated from field: string product_id = 5;
+   */
+  productId?: string;
+
+  /**
+   * @generated from field: string group_buy_id = 6;
+   */
+  groupBuyId?: string;
+
+  /**
+   * @generated from field: string group_buy_title = 7;
+   */
+  groupBuyTitle?: string;
+
+  /**
+   * @generated from field: string final_price = 8;
+   */
+  finalPrice?: string;
+
+  /**
+   * @generated from field: string id = 9;
+   */
+  id?: string;
+
+  /**
+   * @generated from field: string order_no = 10;
+   */
+  orderNo?: string;
+
+  /**
+   * @generated from field: string product_total = 11;
+   */
+  productTotal?: string;
+
+  /**
+   * @generated from field: string discount = 12;
+   */
+  discount?: string;
+
+  /**
+   * @generated from field: string shipment_fee = 13;
+   */
+  shipmentFee?: string;
+
+  /**
+   * @generated from field: string paying_fee = 14;
+   */
+  payingFee?: string;
+
+  /**
+   * @generated from field: string order_price = 15;
+   */
+  orderPrice?: string;
+
+  /**
+   * @generated from field: bool is_payment = 16;
+   */
+  isPayment?: boolean;
+};
+
+/**
+ * Describes the message example.MessageGroupBuy.
+ * Use `create(MessageGroupBuySchema)` to create a new message.
+ */
+export declare const MessageGroupBuySchema: GenMessage<MessageGroupBuy, {jsonType: MessageGroupBuyJson}>;
+
+/**
+ * @generated from message example.NotifyContent
+ */
+export declare type NotifyContent = Message<"example.NotifyContent"> & {
+  /**
+   * @generated from field: repeated example.NotificationType notification_type = 1;
+   */
+  notificationType: NotificationType[];
+
+  /**
+   * @generated from field: example.NotificationMessageType notification_message_type = 2;
+   */
+  notificationMessageType: NotificationMessageType;
+
+  /**
+   * @generated from field: string store_id = 3;
+   */
+  storeId: string;
+
+  /**
+   * @generated from field: string recipient_meepshop_user_id = 4;
+   */
+  recipientMeepshopUserId: string;
+
+  /**
+   * @generated from field: string sender_address = 5;
+   */
+  senderAddress: string;
+
+  /**
+   * @generated from field: string sender_name = 6;
+   */
+  senderName: string;
+
+  /**
+   * @generated from oneof example.NotifyContent.message_content
+   */
+  messageContent: {
+    /**
+     * @generated from field: example.MessageOrderStatus order_status = 7;
+     */
+    value: MessageOrderStatus;
+    case: "orderStatus";
+  } | {
+    /**
+     * @generated from field: example.MessageOrderQA order_qa = 8;
+     */
+    value: MessageOrderQA;
+    case: "orderQa";
+  } | {
+    /**
+     * @generated from field: example.MessageProductQA product_qa = 9;
+     */
+    value: MessageProductQA;
+    case: "productQa";
+  } | {
+    /**
+     * @generated from field: example.MessageStockNotification stock_notification = 10;
+     */
+    value: MessageStockNotification;
+    case: "stockNotification";
+  } | {
+    /**
+     * @generated from field: example.MessageCartReminder cart_reminder = 11;
+     */
+    value: MessageCartReminder;
+    case: "cartReminder";
+  } | {
+    /**
+     * @generated from field: example.MessageRewardPointReminder reward_point_reminder = 12;
+     */
+    value: MessageRewardPointReminder;
+    case: "rewardPointReminder";
+  } | {
+    /**
+     * @generated from field: example.MessageGroupBuy group_buy = 13;
+     */
+    value: MessageGroupBuy;
+    case: "groupBuy";
+  } | { case: undefined; value?: undefined };
+};
+
+/**
+ * @generated from message example.NotifyContent
+ */
+export declare type NotifyContentJson = {
+  /**
+   * @generated from field: repeated example.NotificationType notification_type = 1;
+   */
+  notificationType?: NotificationTypeJson[];
+
+  /**
+   * @generated from field: example.NotificationMessageType notification_message_type = 2;
+   */
+  notificationMessageType?: NotificationMessageTypeJson;
+
+  /**
+   * @generated from field: string store_id = 3;
+   */
+  storeId?: string;
+
+  /**
+   * @generated from field: string recipient_meepshop_user_id = 4;
+   */
+  recipientMeepshopUserId?: string;
+
+  /**
+   * @generated from field: string sender_address = 5;
+   */
+  senderAddress?: string;
+
+  /**
+   * @generated from field: string sender_name = 6;
+   */
+  senderName?: string;
+
+  /**
+   * @generated from field: example.MessageOrderStatus order_status = 7;
+   */
+  orderStatus?: MessageOrderStatusJson;
+
+  /**
+   * @generated from field: example.MessageOrderQA order_qa = 8;
+   */
+  orderQa?: MessageOrderQAJson;
+
+  /**
+   * @generated from field: example.MessageProductQA product_qa = 9;
+   */
+  productQa?: MessageProductQAJson;
+
+  /**
+   * @generated from field: example.MessageStockNotification stock_notification = 10;
+   */
+  stockNotification?: MessageStockNotificationJson;
+
+  /**
+   * @generated from field: example.MessageCartReminder cart_reminder = 11;
+   */
+  cartReminder?: MessageCartReminderJson;
+
+  /**
+   * @generated from field: example.MessageRewardPointReminder reward_point_reminder = 12;
+   */
+  rewardPointReminder?: MessageRewardPointReminderJson;
+
+  /**
+   * @generated from field: example.MessageGroupBuy group_buy = 13;
+   */
+  groupBuy?: MessageGroupBuyJson;
+};
+
+/**
+ * Describes the message example.NotifyContent.
+ * Use `create(NotifyContentSchema)` to create a new message.
+ */
+export declare const NotifyContentSchema: GenMessage<NotifyContent, {jsonType: NotifyContentJson}>;
 
 /**
  * @generated from message example.HelloRequest
@@ -27,14 +909,24 @@ export declare type HelloRequest = Message<"example.HelloRequest"> & {
   age: number;
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_time = 3;
+   * @generated from field: repeated string tags = 3;
+   */
+  tags: string[];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_time = 4;
    */
   createdTime?: Timestamp;
 
   /**
-   * @generated from field: google.type.Decimal amount = 4;
+   * @generated from field: google.type.Decimal amount = 5;
    */
   amount?: Decimal;
+
+  /**
+   * @generated from field: repeated example.NotificationType notification_type = 6;
+   */
+  notificationType: NotificationType[];
 };
 
 /**
@@ -52,14 +944,24 @@ export declare type HelloRequestJson = {
   age?: number;
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_time = 3;
+   * @generated from field: repeated string tags = 3;
+   */
+  tags?: string[];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_time = 4;
    */
   createdTime?: TimestampJson;
 
   /**
-   * @generated from field: google.type.Decimal amount = 4;
+   * @generated from field: google.type.Decimal amount = 5;
    */
   amount?: DecimalJson;
+
+  /**
+   * @generated from field: repeated example.NotificationType notification_type = 6;
+   */
+  notificationType?: NotificationTypeJson[];
 };
 
 /**
@@ -373,6 +1275,115 @@ export declare type RouteSummaryJson = {
  * Use `create(RouteSummarySchema)` to create a new message.
  */
 export declare const RouteSummarySchema: GenMessage<RouteSummary, {jsonType: RouteSummaryJson}>;
+
+/**
+ * @generated from enum example.NotificationType
+ */
+export enum NotificationType {
+  /**
+   * @generated from enum value: NOTIFICATION_TYPE_UNKNOWN = 0;
+   */
+  UNKNOWN = 0,
+
+  /**
+   * @generated from enum value: NOTIFICATION_TYPE_EMAIL = 1;
+   */
+  EMAIL = 1,
+
+  /**
+   * @generated from enum value: NOTIFICATION_TYPE_LINE = 2;
+   */
+  LINE = 2,
+
+  /**
+   * @generated from enum value: NOTIFICATION_TYPE_MESSENGER = 3;
+   */
+  MESSENGER = 3,
+
+  /**
+   * @generated from enum value: NOTIFICATION_TYPE_BEEDING = 4;
+   */
+  BEEDING = 4,
+}
+
+/**
+ * @generated from enum example.NotificationType
+ */
+export declare type NotificationTypeJson = "NOTIFICATION_TYPE_UNKNOWN" | "NOTIFICATION_TYPE_EMAIL" | "NOTIFICATION_TYPE_LINE" | "NOTIFICATION_TYPE_MESSENGER" | "NOTIFICATION_TYPE_BEEDING";
+
+/**
+ * Describes the enum example.NotificationType.
+ */
+export declare const NotificationTypeSchema: GenEnum<NotificationType, NotificationTypeJson>;
+
+/**
+ * @generated from enum example.NotificationMessageType
+ */
+export enum NotificationMessageType {
+  /**
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_UNKNOWN = 0;
+   */
+  UNKNOWN = 0,
+
+  /**
+   * 訂單狀態
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_ORDERSTATUS = 1;
+   */
+  ORDERSTATUS = 1,
+
+  /**
+   * 訂單問與答
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_ORDERQA = 2;
+   */
+  ORDERQA = 2,
+
+  /**
+   * `商品問與答`
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_PRODUCTQA = 3;
+   */
+  PRODUCTQA = 3,
+
+  /**
+   * 商品庫存
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_STOCKNOTIFICATION = 4;
+   */
+  STOCKNOTIFICATION = 4,
+
+  /**
+   * 購物車提醒
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_CARTREMINDER = 5;
+   */
+  CARTREMINDER = 5,
+
+  /**
+   * 購物金提醒
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_REWARDPOINTREMINDER = 6;
+   */
+  REWARDPOINTREMINDER = 6,
+
+  /**
+   * 湊湊團相關通知
+   *
+   * @generated from enum value: NOTIFICATION_MESSAGE_TYPE_GROUPBUY = 7;
+   */
+  GROUPBUY = 7,
+}
+
+/**
+ * @generated from enum example.NotificationMessageType
+ */
+export declare type NotificationMessageTypeJson = "NOTIFICATION_MESSAGE_TYPE_UNKNOWN" | "NOTIFICATION_MESSAGE_TYPE_ORDERSTATUS" | "NOTIFICATION_MESSAGE_TYPE_ORDERQA" | "NOTIFICATION_MESSAGE_TYPE_PRODUCTQA" | "NOTIFICATION_MESSAGE_TYPE_STOCKNOTIFICATION" | "NOTIFICATION_MESSAGE_TYPE_CARTREMINDER" | "NOTIFICATION_MESSAGE_TYPE_REWARDPOINTREMINDER" | "NOTIFICATION_MESSAGE_TYPE_GROUPBUY";
+
+/**
+ * Describes the enum example.NotificationMessageType.
+ */
+export declare const NotificationMessageTypeSchema: GenEnum<NotificationMessageType, NotificationMessageTypeJson>;
 
 /**
  * @generated from service example.HelloService

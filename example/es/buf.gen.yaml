@@ -34,20 +34,6 @@ plugins:
     out: go/gen
     opt:
       - paths=source_relative
-  - remote: buf.build/community/timostamm-protobuf-ts:v2.11.1
-    out: gen
-    opt:
-#      - generate_dependencies
-      - output_javascript_es2020
-      - long_type_number
-      - add_pb_suffix
-      - client_generic
-#      - client_grpc1
-#      - server_generic
-      - server_none
-  # 產生 Protobuf 訊息的 TypeScript 類別 (e.g., HelloRequest)
-  # 外掛程式 1: 產生 Protobuf 訊息和枚舉類型
-  # 這個外掛程式來自 @bufbuild/protoc-gen-es 套件
   - remote: buf.build/bufbuild/es:v2.6.0
     out: grpc-client/gen
     include_imports: true
@@ -61,3 +47,17 @@ plugins:
       - import_extension=.js
       - js_import_style=module
       - json_types=true
+#  - remote: buf.build/community/timostamm-protobuf-ts:v2.11.1
+#    out: gen
+#    opt:
+##      - generate_dependencies
+#      - output_javascript_es2020
+#      - long_type_number
+#      - add_pb_suffix
+#      - client_generic
+##      - client_grpc1
+##      - server_generic
+#      - server_none
+#  # 產生 Protobuf 訊息的 TypeScript 類別 (e.g., HelloRequest)
+#  # 外掛程式 1: 產生 Protobuf 訊息和枚舉類型
+#  # 這個外掛程式來自 @bufbuild/protoc-gen-es 套件

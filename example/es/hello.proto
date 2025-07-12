@@ -36,11 +36,135 @@ service HelloService {
   rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
 }
 
+enum NotificationType {
+  NOTIFICATION_TYPE_UNKNOWN = 0;
+  NOTIFICATION_TYPE_EMAIL = 1;
+  NOTIFICATION_TYPE_LINE = 2;
+  NOTIFICATION_TYPE_MESSENGER = 3;
+  NOTIFICATION_TYPE_BEEDING = 4;
+}
+
+enum NotificationMessageType {
+  NOTIFICATION_MESSAGE_TYPE_UNKNOWN = 0;
+  NOTIFICATION_MESSAGE_TYPE_ORDERSTATUS = 1; // 訂單狀態
+  NOTIFICATION_MESSAGE_TYPE_ORDERQA = 2; // 訂單問與答
+  NOTIFICATION_MESSAGE_TYPE_PRODUCTQA = 3; // `商品問與答`
+  NOTIFICATION_MESSAGE_TYPE_STOCKNOTIFICATION = 4; // 商品庫存
+  NOTIFICATION_MESSAGE_TYPE_CARTREMINDER = 5; // 購物車提醒
+  NOTIFICATION_MESSAGE_TYPE_REWARDPOINTREMINDER = 6; // 購物金提醒
+  NOTIFICATION_MESSAGE_TYPE_GROUPBUY = 7; // 湊湊團相關通知
+}
+
+message MessageOrderStatus {
+  string store_name = 1;
+  string store_url = 2;
+  string order_no = 3;
+  string order_url = 4;
+  string order_status = 5;
+}
+
+message MessageOrderQA {
+  string store_name = 1;
+  string store_url = 2;
+  string order_no = 3;
+  string order_url = 4;
+  string reply = 5;
+}
+
+message MessageProductQA {
+  string store_name = 1;
+  string store_url = 2;
+  string product_url = 3;
+  string reply_txt = 4;
+  string recipient_email = 5;
+}
+
+message MessageStockNotification {
+  string store_name = 1;
+  string store_url = 2;
+  string product_name = 3;
+  string product_id = 4;
+}
+
+message MessageCartReminderCartItem {
+  string img_src = 1;
+  string name = 2;
+}
+
+message MessageCartReminder{
+  string store_logo = 1;
+  string member_name = 2;
+  repeated MessageCartReminderCartItem cart_items = 3;
+  string store_url = 4;
+  string recipient_email = 5;
+  string cancel_url = 6;
+}
+
+message MessageRewardPointReminder{
+  string store_name = 1;
+  string currency = 2;
+  string points = 3;
+  string timezone = 4;
+  string end_time = 5;
+  string activity_name = 6;
+  string store_url = 7;
+  string recipient_email = 8;
+  string cancel_url = 9;
+}
+
+message MessageGroupBuyProductItem {
+  string img_src = 1;
+  string name = 2;
+  string variant = 3;
+  int64 num = 4;
+  string price = 5;
+  string total_price = 6;
+}
+
+message MessageGroupBuy {
+  string store_logo = 1;
+  repeated MessageGroupBuyProductItem product_items = 2;
+  string store_name = 3;
+  string store_url = 4;
+  string product_id = 5;
+  string group_buy_id = 6;
+  string group_buy_title = 7;
+  string final_price = 8;
+  string id = 9;
+  string order_no = 10;
+  string product_total = 11;
+  string discount = 12;
+  string shipment_fee = 13;
+  string paying_fee = 14;
+  string order_price = 15;
+  bool is_payment = 16;
+}
+
+message NotifyContent {
+  repeated NotificationType notification_type = 1;
+  NotificationMessageType notification_message_type = 2;
+  string store_id = 3;
+  string recipient_meepshop_user_id = 4;
+  string sender_address = 5;
+  string sender_name = 6;
+  oneof message_content {
+    MessageOrderStatus order_status = 7;
+    MessageOrderQA order_qa = 8;
+    MessageProductQA product_qa = 9;
+    MessageStockNotification stock_notification = 10;
+    MessageCartReminder cart_reminder = 11;
+    MessageRewardPointReminder reward_point_reminder = 12;
+    MessageGroupBuy group_buy = 13;
+  }
+}
+
 message HelloRequest {
   string name = 1;
   int32 age = 2;
-  google.protobuf.Timestamp created_time = 3;
-  google.type.Decimal amount = 4;
+  repeated string tags = 3;
+  google.protobuf.Timestamp created_time = 4;
+  google.type.Decimal amount = 5;
+  repeated NotificationType notification_type = 6;
 }
 message HelloReply {
   string message = 1;

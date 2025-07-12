@@ -2,7 +2,7 @@
 // @generated from file hello.proto (package example, syntax proto3)
 /* eslint-disable */
 
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc, serviceDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import { file_google_type_decimal } from "./google/type/decimal_pb.js";
 import { file_google_rpc_error_details } from "./google/rpc/error_details_pb.js";
@@ -13,56 +13,150 @@ import { file_google_api_http } from "./google/api/http_pb.js";
  * Describes the file hello.proto.
  */
 export const file_hello = /*@__PURE__*/
-  fileDesc("CgtoZWxsby5wcm90bxIHZXhhbXBsZSKBAQoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUYASABKAkSCwoDYWdlGAIgASgFEjAKDGNyZWF0ZWRfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASJAoGYW1vdW50GAQgASgLMhQuZ29vZ2xlLnR5cGUuRGVjaW1hbCIdCgpIZWxsb1JlcGx5Eg8KB21lc3NhZ2UYASABKAkiLAoFUG9pbnQSEAoIbGF0aXR1ZGUYASABKAUSEQoJbG9uZ2l0dWRlGAIgASgFIkMKCVJlY3RhbmdsZRIaCgJsbxgBIAEoCzIOLmV4YW1wbGUuUG9pbnQSGgoCaGkYAiABKAsyDi5leGFtcGxlLlBvaW50IjkKB0ZlYXR1cmUSDAoEbmFtZRgBIAEoCRIgCghsb2NhdGlvbhgCIAEoCzIOLmV4YW1wbGUuUG9pbnQiPgoJUm91dGVOb3RlEiAKCGxvY2F0aW9uGAEgASgLMg4uZXhhbXBsZS5Qb2ludBIPCgdtZXNzYWdlGAIgASgJImIKDFJvdXRlU3VtbWFyeRITCgtwb2ludF9jb3VudBgBIAEoBRIVCg1mZWF0dXJlX2NvdW50GAIgASgFEhAKCGRpc3RhbmNlGAMgASgFEhQKDGVsYXBzZWRfdGltZRgEIAEoBTKUAgoMSGVsbG9TZXJ2aWNlElUKCFNheUhlbGxvEhUuZXhhbXBsZS5IZWxsb1JlcXVlc3QaEy5leGFtcGxlLkhlbGxvUmVwbHkiHYLT5JMCFxIVL3YxL2V4YW1wbGUvc2F5X2hlbGxvEjgKDExpc3RGZWF0dXJlcxISLmV4YW1wbGUuUmVjdGFuZ2xlGhAuZXhhbXBsZS5GZWF0dXJlIgAwARI4CgtSZWNvcmRSb3V0ZRIOLmV4YW1wbGUuUG9pbnQaFS5leGFtcGxlLlJvdXRlU3VtbWFyeSIAKAESOQoJUm91dGVDaGF0EhIuZXhhbXBsZS5Sb3V0ZU5vdGUaEi5leGFtcGxlLlJvdXRlTm90ZSIAKAEwAUJgCgtjb20uZXhhbXBsZUIKSGVsbG9Qcm90b1ABWgkuO2V4YW1wbGWiAgNFWFiqAgdFeGFtcGxlygIHRXhhbXBsZeICE0V4YW1wbGVcR1BCTWV0YWRhdGHqAgdFeGFtcGxlYgZwcm90bzM", [file_google_protobuf_timestamp, file_google_type_decimal, file_google_rpc_error_details, file_google_api_annotations, file_google_api_http]);
+  fileDesc("CgtoZWxsby5wcm90bxIHZXhhbXBsZSJ2ChJNZXNzYWdlT3JkZXJTdGF0dXMSEgoKc3RvcmVfbmFtZRgBIAEoCRIRCglzdG9yZV91cmwYAiABKAkSEAoIb3JkZXJfbm8YAyABKAkSEQoJb3JkZXJfdXJsGAQgASgJEhQKDG9yZGVyX3N0YXR1cxgFIAEoCSJrCg5NZXNzYWdlT3JkZXJRQRISCgpzdG9yZV9uYW1lGAEgASgJEhEKCXN0b3JlX3VybBgCIAEoCRIQCghvcmRlcl9ubxgDIAEoCRIRCglvcmRlcl91cmwYBCABKAkSDQoFcmVwbHkYBSABKAkiegoQTWVzc2FnZVByb2R1Y3RRQRISCgpzdG9yZV9uYW1lGAEgASgJEhEKCXN0b3JlX3VybBgCIAEoCRITCgtwcm9kdWN0X3VybBgDIAEoCRIRCglyZXBseV90eHQYBCABKAkSFwoPcmVjaXBpZW50X2VtYWlsGAUgASgJImsKGE1lc3NhZ2VTdG9ja05vdGlmaWNhdGlvbhISCgpzdG9yZV9uYW1lGAEgASgJEhEKCXN0b3JlX3VybBgCIAEoCRIUCgxwcm9kdWN0X25hbWUYAyABKAkSEgoKcHJvZHVjdF9pZBgEIAEoCSI8ChtNZXNzYWdlQ2FydFJlbWluZGVyQ2FydEl0ZW0SDwoHaW1nX3NyYxgBIAEoCRIMCgRuYW1lGAIgASgJIrgBChNNZXNzYWdlQ2FydFJlbWluZGVyEhIKCnN0b3JlX2xvZ28YASABKAkSEwoLbWVtYmVyX25hbWUYAiABKAkSOAoKY2FydF9pdGVtcxgDIAMoCzIkLmV4YW1wbGUuTWVzc2FnZUNhcnRSZW1pbmRlckNhcnRJdGVtEhEKCXN0b3JlX3VybBgEIAEoCRIXCg9yZWNpcGllbnRfZW1haWwYBSABKAkSEgoKY2FuY2VsX3VybBgGIAEoCSLNAQoaTWVzc2FnZVJld2FyZFBvaW50UmVtaW5kZXISEgoKc3RvcmVfbmFtZRgBIAEoCRIQCghjdXJyZW5jeRgCIAEoCRIOCgZwb2ludHMYAyABKAkSEAoIdGltZXpvbmUYBCABKAkSEAoIZW5kX3RpbWUYBSABKAkSFQoNYWN0aXZpdHlfbmFtZRgGIAEoCRIRCglzdG9yZV91cmwYByABKAkSFwoPcmVjaXBpZW50X2VtYWlsGAggASgJEhIKCmNhbmNlbF91cmwYCSABKAkifQoaTWVzc2FnZUdyb3VwQnV5UHJvZHVjdEl0ZW0SDwoHaW1nX3NyYxgBIAEoCRIMCgRuYW1lGAIgASgJEg8KB3ZhcmlhbnQYAyABKAkSCwoDbnVtGAQgASgDEg0KBXByaWNlGAUgASgJEhMKC3RvdGFsX3ByaWNlGAYgASgJIvoCCg9NZXNzYWdlR3JvdXBCdXkSEgoKc3RvcmVfbG9nbxgBIAEoCRI6Cg1wcm9kdWN0X2l0ZW1zGAIgAygLMiMuZXhhbXBsZS5NZXNzYWdlR3JvdXBCdXlQcm9kdWN0SXRlbRISCgpzdG9yZV9uYW1lGAMgASgJEhEKCXN0b3JlX3VybBgEIAEoCRISCgpwcm9kdWN0X2lkGAUgASgJEhQKDGdyb3VwX2J1eV9pZBgGIAEoCRIXCg9ncm91cF9idXlfdGl0bGUYByABKAkSEwoLZmluYWxfcHJpY2UYCCABKAkSCgoCaWQYCSABKAkSEAoIb3JkZXJfbm8YCiABKAkSFQoNcHJvZHVjdF90b3RhbBgLIAEoCRIQCghkaXNjb3VudBgMIAEoCRIUCgxzaGlwbWVudF9mZWUYDSABKAkSEgoKcGF5aW5nX2ZlZRgOIAEoCRITCgtvcmRlcl9wcmljZRgPIAEoCRISCgppc19wYXltZW50GBAgASgIIoAFCg1Ob3RpZnlDb250ZW50EjQKEW5vdGlmaWNhdGlvbl90eXBlGAEgAygOMhkuZXhhbXBsZS5Ob3RpZmljYXRpb25UeXBlEkMKGW5vdGlmaWNhdGlvbl9tZXNzYWdlX3R5cGUYAiABKA4yIC5leGFtcGxlLk5vdGlmaWNhdGlvbk1lc3NhZ2VUeXBlEhAKCHN0b3JlX2lkGAMgASgJEiIKGnJlY2lwaWVudF9tZWVwc2hvcF91c2VyX2lkGAQgASgJEhYKDnNlbmRlcl9hZGRyZXNzGAUgASgJEhMKC3NlbmRlcl9uYW1lGAYgASgJEjMKDG9yZGVyX3N0YXR1cxgHIAEoCzIbLmV4YW1wbGUuTWVzc2FnZU9yZGVyU3RhdHVzSAASKwoIb3JkZXJfcWEYCCABKAsyFy5leGFtcGxlLk1lc3NhZ2VPcmRlclFBSAASLwoKcHJvZHVjdF9xYRgJIAEoCzIZLmV4YW1wbGUuTWVzc2FnZVByb2R1Y3RRQUgAEj8KEnN0b2NrX25vdGlmaWNhdGlvbhgKIAEoCzIhLmV4YW1wbGUuTWVzc2FnZVN0b2NrTm90aWZpY2F0aW9uSAASNQoNY2FydF9yZW1pbmRlchgLIAEoCzIcLmV4YW1wbGUuTWVzc2FnZUNhcnRSZW1pbmRlckgAEkQKFXJld2FyZF9wb2ludF9yZW1pbmRlchgMIAEoCzIjLmV4YW1wbGUuTWVzc2FnZVJld2FyZFBvaW50UmVtaW5kZXJIABItCglncm91cF9idXkYDSABKAsyGC5leGFtcGxlLk1lc3NhZ2VHcm91cEJ1eUgAQhEKD21lc3NhZ2VfY29udGVudCLFAQoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUYASABKAkSCwoDYWdlGAIgASgFEgwKBHRhZ3MYAyADKAkSMAoMY3JlYXRlZF90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIkCgZhbW91bnQYBSABKAsyFC5nb29nbGUudHlwZS5EZWNpbWFsEjQKEW5vdGlmaWNhdGlvbl90eXBlGAYgAygOMhkuZXhhbXBsZS5Ob3RpZmljYXRpb25UeXBlIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCSIsCgVQb2ludBIQCghsYXRpdHVkZRgBIAEoBRIRCglsb25naXR1ZGUYAiABKAUiQwoJUmVjdGFuZ2xlEhoKAmxvGAEgASgLMg4uZXhhbXBsZS5Qb2ludBIaCgJoaRgCIAEoCzIOLmV4YW1wbGUuUG9pbnQiOQoHRmVhdHVyZRIMCgRuYW1lGAEgASgJEiAKCGxvY2F0aW9uGAIgASgLMg4uZXhhbXBsZS5Qb2ludCI+CglSb3V0ZU5vdGUSIAoIbG9jYXRpb24YASABKAsyDi5leGFtcGxlLlBvaW50Eg8KB21lc3NhZ2UYAiABKAkiYgoMUm91dGVTdW1tYXJ5EhMKC3BvaW50X2NvdW50GAEgASgFEhUKDWZlYXR1cmVfY291bnQYAiABKAUSEAoIZGlzdGFuY2UYAyABKAUSFAoMZWxhcHNlZF90aW1lGAQgASgFKqoBChBOb3RpZmljYXRpb25UeXBlEh0KGU5PVElGSUNBVElPTl9UWVBFX1VOS05PV04QABIbChdOT1RJRklDQVRJT05fVFlQRV9FTUFJTBABEhoKFk5PVElGSUNBVElPTl9UWVBFX0xJTkUQAhIfChtOT1RJRklDQVRJT05fVFlQRV9NRVNTRU5HRVIQAxIdChlOT1RJRklDQVRJT05fVFlQRV9CRUVESU5HEAQq8wIKF05vdGlmaWNhdGlvbk1lc3NhZ2VUeXBlEiUKIU5PVElGSUNBVElPTl9NRVNTQUdFX1RZUEVfVU5LTk9XThAAEikKJU5PVElGSUNBVElPTl9NRVNTQUdFX1RZUEVfT1JERVJTVEFUVVMQARIlCiFOT1RJRklDQVRJT05fTUVTU0FHRV9UWVBFX09SREVSUUEQAhInCiNOT1RJRklDQVRJT05fTUVTU0FHRV9UWVBFX1BST0RVQ1RRQRADEi8KK05PVElGSUNBVElPTl9NRVNTQUdFX1RZUEVfU1RPQ0tOT1RJRklDQVRJT04QBBIqCiZOT1RJRklDQVRJT05fTUVTU0FHRV9UWVBFX0NBUlRSRU1JTkRFUhAFEjEKLU5PVElGSUNBVElPTl9NRVNTQUdFX1RZUEVfUkVXQVJEUE9JTlRSRU1JTkRFUhAGEiYKIk5PVElGSUNBVElPTl9NRVNTQUdFX1RZUEVfR1JPVVBCVVkQBzKUAgoMSGVsbG9TZXJ2aWNlElUKCFNheUhlbGxvEhUuZXhhbXBsZS5IZWxsb1JlcXVlc3QaEy5leGFtcGxlLkhlbGxvUmVwbHkiHYLT5JMCFxIVL3YxL2V4YW1wbGUvc2F5X2hlbGxvEjgKDExpc3RGZWF0dXJlcxISLmV4YW1wbGUuUmVjdGFuZ2xlGhAuZXhhbXBsZS5GZWF0dXJlIgAwARI4CgtSZWNvcmRSb3V0ZRIOLmV4YW1wbGUuUG9pbnQaFS5leGFtcGxlLlJvdXRlU3VtbWFyeSIAKAESOQoJUm91dGVDaGF0EhIuZXhhbXBsZS5Sb3V0ZU5vdGUaEi5leGFtcGxlLlJvdXRlTm90ZSIAKAEwAUJgCgtjb20uZXhhbXBsZUIKSGVsbG9Qcm90b1ABWgkuO2V4YW1wbGWiAgNFWFiqAgdFeGFtcGxlygIHRXhhbXBsZeICE0V4YW1wbGVcR1BCTWV0YWRhdGHqAgdFeGFtcGxlYgZwcm90bzM", [file_google_protobuf_timestamp, file_google_type_decimal, file_google_rpc_error_details, file_google_api_annotations, file_google_api_http]);
+
+/**
+ * Describes the message example.MessageOrderStatus.
+ * Use `create(MessageOrderStatusSchema)` to create a new message.
+ */
+export const MessageOrderStatusSchema = /*@__PURE__*/
+  messageDesc(file_hello, 0);
+
+/**
+ * Describes the message example.MessageOrderQA.
+ * Use `create(MessageOrderQASchema)` to create a new message.
+ */
+export const MessageOrderQASchema = /*@__PURE__*/
+  messageDesc(file_hello, 1);
+
+/**
+ * Describes the message example.MessageProductQA.
+ * Use `create(MessageProductQASchema)` to create a new message.
+ */
+export const MessageProductQASchema = /*@__PURE__*/
+  messageDesc(file_hello, 2);
+
+/**
+ * Describes the message example.MessageStockNotification.
+ * Use `create(MessageStockNotificationSchema)` to create a new message.
+ */
+export const MessageStockNotificationSchema = /*@__PURE__*/
+  messageDesc(file_hello, 3);
+
+/**
+ * Describes the message example.MessageCartReminderCartItem.
+ * Use `create(MessageCartReminderCartItemSchema)` to create a new message.
+ */
+export const MessageCartReminderCartItemSchema = /*@__PURE__*/
+  messageDesc(file_hello, 4);
+
+/**
+ * Describes the message example.MessageCartReminder.
+ * Use `create(MessageCartReminderSchema)` to create a new message.
+ */
+export const MessageCartReminderSchema = /*@__PURE__*/
+  messageDesc(file_hello, 5);
+
+/**
+ * Describes the message example.MessageRewardPointReminder.
+ * Use `create(MessageRewardPointReminderSchema)` to create a new message.
+ */
+export const MessageRewardPointReminderSchema = /*@__PURE__*/
+  messageDesc(file_hello, 6);
+
+/**
+ * Describes the message example.MessageGroupBuyProductItem.
+ * Use `create(MessageGroupBuyProductItemSchema)` to create a new message.
+ */
+export const MessageGroupBuyProductItemSchema = /*@__PURE__*/
+  messageDesc(file_hello, 7);
+
+/**
+ * Describes the message example.MessageGroupBuy.
+ * Use `create(MessageGroupBuySchema)` to create a new message.
+ */
+export const MessageGroupBuySchema = /*@__PURE__*/
+  messageDesc(file_hello, 8);
+
+/**
+ * Describes the message example.NotifyContent.
+ * Use `create(NotifyContentSchema)` to create a new message.
+ */
+export const NotifyContentSchema = /*@__PURE__*/
+  messageDesc(file_hello, 9);
 
 /**
  * Describes the message example.HelloRequest.
  * Use `create(HelloRequestSchema)` to create a new message.
  */
 export const HelloRequestSchema = /*@__PURE__*/
-  messageDesc(file_hello, 0);
+  messageDesc(file_hello, 10);
 
 /**
  * Describes the message example.HelloReply.
  * Use `create(HelloReplySchema)` to create a new message.
  */
 export const HelloReplySchema = /*@__PURE__*/
-  messageDesc(file_hello, 1);
+  messageDesc(file_hello, 11);
 
 /**
  * Describes the message example.Point.
  * Use `create(PointSchema)` to create a new message.
  */
 export const PointSchema = /*@__PURE__*/
-  messageDesc(file_hello, 2);
+  messageDesc(file_hello, 12);
 
 /**
  * Describes the message example.Rectangle.
  * Use `create(RectangleSchema)` to create a new message.
  */
 export const RectangleSchema = /*@__PURE__*/
-  messageDesc(file_hello, 3);
+  messageDesc(file_hello, 13);
 
 /**
  * Describes the message example.Feature.
  * Use `create(FeatureSchema)` to create a new message.
  */
 export const FeatureSchema = /*@__PURE__*/
-  messageDesc(file_hello, 4);
+  messageDesc(file_hello, 14);
 
 /**
  * Describes the message example.RouteNote.
  * Use `create(RouteNoteSchema)` to create a new message.
  */
 export const RouteNoteSchema = /*@__PURE__*/
-  messageDesc(file_hello, 5);
+  messageDesc(file_hello, 15);
 
 /**
  * Describes the message example.RouteSummary.
  * Use `create(RouteSummarySchema)` to create a new message.
  */
 export const RouteSummarySchema = /*@__PURE__*/
-  messageDesc(file_hello, 6);
+  messageDesc(file_hello, 16);
+
+/**
+ * Describes the enum example.NotificationType.
+ */
+export const NotificationTypeSchema = /*@__PURE__*/
+  enumDesc(file_hello, 0);
+
+/**
+ * @generated from enum example.NotificationType
+ */
+export const NotificationType = /*@__PURE__*/
+  tsEnum(NotificationTypeSchema);
+
+/**
+ * Describes the enum example.NotificationMessageType.
+ */
+export const NotificationMessageTypeSchema = /*@__PURE__*/
+  enumDesc(file_hello, 1);
+
+/**
+ * @generated from enum example.NotificationMessageType
+ */
+export const NotificationMessageType = /*@__PURE__*/
+  tsEnum(NotificationMessageTypeSchema);
 
 /**
  * @generated from service example.HelloService
